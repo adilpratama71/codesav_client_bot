@@ -1,0 +1,22 @@
+{
+  "name": "codesav_client_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "dev": "npx ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzakki/codesav_client_bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzakki/codesav_client_bot/issues"
+  },
+  "homepage": "https://github.com/dzakki/codesav_client_bot#readme"
+}
