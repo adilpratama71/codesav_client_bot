@@ -26,7 +26,7 @@ bot.on("message", (message: Message) => {
   if (cmd.length === 0) return
   if (bot.commands.has(cmd)) {
     const command: Command<Client, Message> = bot.commands.get(cmd)
-    command.fn(bot, message)
+    command.fn(bot, message, args)
   }
 })
 
