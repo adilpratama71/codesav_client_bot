@@ -7,8 +7,10 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "typeRoots": ["node_modules/@types", "types"],
+    "rootDir": "./src"
   },
-  "include": ["src/**/*", "environment.d.ts"],
+  "include": ["src/**/*", "types/**/*"],
   "exclude": ["node_modules", "dist"]
 }
