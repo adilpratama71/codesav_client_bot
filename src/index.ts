@@ -1,17 +1,33 @@
-import { Client } from "discord.js"
+import { Client, Message } from "discord.js"
 import config from "./config/discord"
+import loadCommand from "./loadCommands"
 
 const bot: Client = new Client()
 
 bot.config = config
+bot.commands = new Map()
+loadCommand(bot)
 
 bot.on("ready", () => {
   console.log("code save at your service")
 })
 
-bot.on("message", message => {
-  console.log(message.content)
-})
-console.log(bot.config.token)
+bot.on("message", (message: Message) => {
+  const prefix = bot.config.prefix
+  const [cmd, ...args] = message.content
+    .substring(prefix.length)
+    .trim()
+    .split(/\s+/)
 
-bot.login("NzU5NzUyNTgxOTc5MDQ1OTMx.X3CEuw.2OAd_RC_vM7uB6kr3qih8p3JYwY")
+  if (message.author.bot || !message.guild) return
+
+  if (!message.content.startsWith(prefix)) return
+
+  if (cmd.length === 0) return
+  if (bot.commands.has(cmd)) {
+    const command: Command<Client, Message> = bot.commands.get(cmd)
+    command.fn(bot, message)
+  }
+})
+
+bot.login(bot.config.token)

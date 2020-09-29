@@ -1,6 +1,8 @@
+import { Collection } from "discord.js"
 declare module "discord.js" {
-  export interface Client {
+  interface Client {
     config: Config
+    commands: Map<any, any>
   }
   interface WhiteList {
     id: string
