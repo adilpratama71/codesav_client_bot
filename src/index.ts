@@ -14,4 +14,4 @@ bot.on("message", message => {
 })
 console.log(bot.config.token)
 
-bot.login(bot.config.token)
+bot.login("NzU5NzUyNTgxOTc5MDQ1OTMx.X3CEuw.2OAd_RC_vM7uB6kr3qih8p3JYwY")

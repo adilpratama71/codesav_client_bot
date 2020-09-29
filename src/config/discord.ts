@@ -1,5 +1,5 @@
 import { Config } from "discord.js"
-
+console.log(process.env.BOT_TOKEN, " here")
 const discordConfig: Config = {
   prefix: "!foxy",
   token: process.env.BOT_TOKEN,
